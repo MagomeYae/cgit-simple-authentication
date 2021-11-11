@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install packages
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -yy libpam0g-dev libpam0g
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable

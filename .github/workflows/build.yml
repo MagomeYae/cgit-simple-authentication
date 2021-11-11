@@ -25,6 +25,12 @@ jobs:
           profile: minimal
           toolchain: stable
           override: true
+      - name: Install packages
+        if: matrix.os == 'ubuntu-latest'
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -yy libpam0g-dev libpam0g
       - uses: actions-rs/cargo@v1
         with:
           command: build
