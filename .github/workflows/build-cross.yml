@@ -15,7 +15,7 @@ jobs:
         shell: bash
         run: |
           sudo apt-get update
-          sudo apt-get install -yy libpam0g-dev libpam0g
+          sudo apt-get install -yy libpam0g-dev libpam0g musl-dev libpam-modules
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
